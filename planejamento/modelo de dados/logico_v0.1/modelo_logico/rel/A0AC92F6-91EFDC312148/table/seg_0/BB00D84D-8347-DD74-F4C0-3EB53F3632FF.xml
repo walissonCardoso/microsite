@@ -1,0 +1,58 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="BB00D84D-8347-DD74-F4C0-3EB53F3632FF" name="TB_STATUS_TEXTO">
+<createdBy>walisson</createdBy>
+<createdTime>2023-02-06 17:19:56 UTC</createdTime>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<ordsAlias>table_6</ordsAlias>
+<abbreviation>STATUS_TEXTO</abbreviation>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID" id="11C3A199-F933-4998-E37D-C26DDD9C8D74">
+<createdBy>walisson</createdBy>
+<createdTime>2023-02-06 17:20:55 UTC</createdTime>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT018</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NOME" id="05437899-ABD9-5042-ABE3-B3742EEC0A83">
+<createdBy>walisson</createdBy>
+<createdTime>2023-02-06 17:20:55 UTC</createdTime>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>60 CHAR</dataTypeSize>
+<ownDataTypeParameters>60 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DESCRICAO" id="A80CB730-5BE7-7251-94BF-634324ADC209">
+<createdBy>walisson</createdBy>
+<createdTime>2023-02-06 17:20:55 UTC</createdTime>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>600 CHAR</dataTypeSize>
+<ownDataTypeParameters>600 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="890B33D6-ADDE-1BDB-EDCB-29BAF950F0F0" name="TB_STATUS_TEXTO_PK">
+<createdBy>walisson</createdBy>
+<createdTime>2023-02-06 17:20:55 UTC</createdTime>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="11C3A199-F933-4998-E37D-C26DDD9C8D74"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

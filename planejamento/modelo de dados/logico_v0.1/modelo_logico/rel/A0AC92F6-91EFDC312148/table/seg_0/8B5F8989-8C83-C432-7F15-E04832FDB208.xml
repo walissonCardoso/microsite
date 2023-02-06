@@ -1,0 +1,63 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="8B5F8989-8C83-C432-7F15-E04832FDB208" name="TB_TEXTO_GENERO">
+<createdBy>walisson</createdBy>
+<createdTime>2023-02-06 17:24:02 UTC</createdTime>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<ordsAlias>table_8</ordsAlias>
+<abbreviation>TEXTO_GENERO</abbreviation>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="TB_TEXTO_ID" id="9CDA918F-A582-ECF2-EDEB-84399D233743">
+<createdBy>walisson</createdBy>
+<createdTime>2023-02-06 17:24:29 UTC</createdTime>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="ABACB82D-6AAE-72AC-6DBD-95E2F8C97FB4" referredColumn="CB290E12-3362-6313-4266-23F98C00B79A"/>
+</associations>
+</Column>
+<Column name="TB_GENERO_ID" id="30008B96-F6C9-86B3-1DB4-CA7E02F49D0F">
+<createdBy>walisson</createdBy>
+<createdTime>2023-02-06 17:24:45 UTC</createdTime>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT018</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="D8336A85-5D7C-6BDB-4C22-423B6C2A3ED3" referredColumn="20BF8D89-F442-256D-C598-5C86FB6D36DB"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="E50AD2A6-3EF0-307E-A7FE-91DCCE2D8375" name="TEXTOGENERO_TEXTO_FK">
+<createdBy>walisson</createdBy>
+<createdTime>2023-02-06 17:24:29 UTC</createdTime>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9CDA918F-A582-ECF2-EDEB-84399D233743"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="DD5CDFA8-194C-646F-0D48-56A863118F6A" name="TEXTOGENERO_GENERO_FK">
+<createdBy>walisson</createdBy>
+<createdTime>2023-02-06 17:24:45 UTC</createdTime>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="30008B96-F6C9-86B3-1DB4-CA7E02F49D0F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

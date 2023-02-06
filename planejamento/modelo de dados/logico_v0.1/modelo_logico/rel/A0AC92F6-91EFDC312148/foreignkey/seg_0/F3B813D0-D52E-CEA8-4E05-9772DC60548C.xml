@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="F3B813D0-D52E-CEA8-4E05-9772DC60548C" containerWithKeyObject="71386E8E-A677-DF8D-78A5-754D21B22BC8" localFKIndex="511F5F96-2828-D761-A3F9-B05BD625D9A8" name="AUTOR_SEXO_FK">
+<createdBy>walisson</createdBy>
+<createdTime>2023-02-06 17:14:17 UTC</createdTime>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<referredTableLongName>TB_SEXO</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>4FCE1A50-BCB4-4FF9-B2AC-A098471A040D</referredTableID>
+<keyObject>AA44293E-7137-7F9D-7705-92A71A6062F7</keyObject>
+<referredKeyID>AA44293E-7137-7F9D-7705-92A71A6062F7</referredKeyID>
+<mandatory>false</mandatory>
+<refColNames>ID</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

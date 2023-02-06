@@ -1,0 +1,47 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="4FCE1A50-BCB4-4FF9-B2AC-A098471A040D" name="TB_SEXO">
+<createdBy>walisson</createdBy>
+<createdTime>2023-02-06 17:12:24 UTC</createdTime>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<ordsAlias>table_3</ordsAlias>
+<abbreviation>SEXO</abbreviation>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID" id="ADAA3A64-2DC1-A5F0-DD53-802EF171988E">
+<createdBy>walisson</createdBy>
+<createdTime>2023-02-06 17:13:44 UTC</createdTime>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT018</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NOME" id="CD277D3C-8CBE-A905-8F29-85FA5FA21193">
+<createdBy>walisson</createdBy>
+<createdTime>2023-02-06 17:13:44 UTC</createdTime>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>60 CHAR</dataTypeSize>
+<ownDataTypeParameters>60 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="AA44293E-7137-7F9D-7705-92A71A6062F7" name="TB_SEXO_PK">
+<createdBy>walisson</createdBy>
+<createdTime>2023-02-06 17:13:44 UTC</createdTime>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="ADAA3A64-2DC1-A5F0-DD53-802EF171988E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

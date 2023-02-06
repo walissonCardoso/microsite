@@ -1,0 +1,58 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="2EC55F72-D6BA-5030-4AE1-32752FB87F17" name="TB_GENERO">
+<createdBy>walisson</createdBy>
+<createdTime>2023-02-06 17:22:08 UTC</createdTime>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<ordsAlias>table_7</ordsAlias>
+<abbreviation>GENERO</abbreviation>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID" id="20BF8D89-F442-256D-C598-5C86FB6D36DB">
+<createdBy>walisson</createdBy>
+<createdTime>2023-02-06 17:23:26 UTC</createdTime>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT018</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NOME" id="481D2C14-E3F0-9941-6870-6BAA1DD8E1C3">
+<createdBy>walisson</createdBy>
+<createdTime>2023-02-06 17:23:26 UTC</createdTime>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>60 CHAR</dataTypeSize>
+<ownDataTypeParameters>60 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DESCRICAO" id="3CBF6A39-23A9-373C-449A-7B6B32F1F996">
+<createdBy>walisson</createdBy>
+<createdTime>2023-02-06 17:23:26 UTC</createdTime>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>600 CHAR</dataTypeSize>
+<ownDataTypeParameters>600 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="E0EC16E4-ADEA-3065-F184-AF0B426989C3" name="TB_GENERO_PK">
+<createdBy>walisson</createdBy>
+<createdTime>2023-02-06 17:23:26 UTC</createdTime>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="20BF8D89-F442-256D-C598-5C86FB6D36DB"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

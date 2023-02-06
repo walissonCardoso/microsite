@@ -1,0 +1,117 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="3A82378F-E77A-523A-1CB4-C77507AD84D6" name="TB_TEXTO">
+<createdBy>walisson</createdBy>
+<createdTime>2023-02-06 17:15:12 UTC</createdTime>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<ordsAlias>table_4</ordsAlias>
+<abbreviation>TEXTO</abbreviation>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID" id="CB290E12-3362-6313-4266-23F98C00B79A">
+<createdBy>walisson</createdBy>
+<createdTime>2023-02-06 17:16:44 UTC</createdTime>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TITULO" id="60DFE200-3EB9-2C54-AAEC-BD4CF37CDDE0">
+<createdBy>walisson</createdBy>
+<createdTime>2023-02-06 17:16:44 UTC</createdTime>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>60 CHAR</dataTypeSize>
+<ownDataTypeParameters>60 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CORPO" id="C12ED982-672E-3FDF-3011-56BC2183E62F">
+<createdBy>walisson</createdBy>
+<createdTime>2023-02-06 17:16:44 UTC</createdTime>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>600 CHAR</dataTypeSize>
+<ownDataTypeParameters>600 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DT_CRIACAO" id="78F460F8-A924-39CD-F7C7-F3AAE25BA7B1">
+<createdBy>walisson</createdBy>
+<createdTime>2023-02-06 17:17:48 UTC</createdTime>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TB_AUTOR_ID" id="C625DA40-9131-EA6D-3D10-8A268C27CE39">
+<createdBy>walisson</createdBy>
+<createdTime>2023-02-06 17:18:04 UTC</createdTime>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="04DF29B9-40C4-1EFD-960F-1CE0C5301DEE" referredColumn="BCFB274A-8C62-7A94-7134-31F7B5360333"/>
+</associations>
+</Column>
+<Column name="TB_STATUS_TEXTO_ID" id="1D799D8A-6749-4809-91C6-46FE013AD78A">
+<createdBy>walisson</createdBy>
+<createdTime>2023-02-06 17:21:11 UTC</createdTime>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT018</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="F642BE8C-317D-15A0-405F-4B38545190DA" referredColumn="11C3A199-F933-4998-E37D-C26DDD9C8D74"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="93A2262E-E7F2-2BC9-0314-629DB168C6D5" name="TB_TEXTO_PK">
+<createdBy>walisson</createdBy>
+<createdTime>2023-02-06 17:16:44 UTC</createdTime>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="CB290E12-3362-6313-4266-23F98C00B79A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="AD4C9386-1945-63FF-FB8C-B72A6FCF1344" name="TEXTO_AUTOR_FK">
+<createdBy>walisson</createdBy>
+<createdTime>2023-02-06 17:18:04 UTC</createdTime>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C625DA40-9131-EA6D-3D10-8A268C27CE39"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="6D9C0BD0-484A-B41F-3879-A37765281D64" name="TEXTOSTATUS_TEXTO_FK">
+<createdBy>walisson</createdBy>
+<createdTime>2023-02-06 17:21:11 UTC</createdTime>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1D799D8A-6749-4809-91C6-46FE013AD78A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
