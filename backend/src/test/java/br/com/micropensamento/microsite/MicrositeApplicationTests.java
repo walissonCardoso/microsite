@@ -1,10 +1,10 @@
-package br.com.micropensamento.microssite;
+package br.com.micropensamento.microsite;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class MicrossiteApplicationTests {
+class MicrositeApplicationTests {
 
 	@Test
 	void contextLoads() {

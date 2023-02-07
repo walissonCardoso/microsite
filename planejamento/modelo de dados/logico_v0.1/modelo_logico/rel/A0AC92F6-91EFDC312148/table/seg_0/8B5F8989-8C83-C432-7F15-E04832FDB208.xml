@@ -9,7 +9,7 @@
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="TB_TEXTO_ID" id="9CDA918F-A582-ECF2-EDEB-84399D233743">
+<Column name="TEXTO_ID" id="9CDA918F-A582-ECF2-EDEB-84399D233743">
 <createdBy>walisson</createdBy>
 <createdTime>2023-02-06 17:24:29 UTC</createdTime>
 <ownerDesignName>modelo_logico</ownerDesignName>
@@ -23,7 +23,7 @@
 <colAssociation fkAssociation="ABACB82D-6AAE-72AC-6DBD-95E2F8C97FB4" referredColumn="CB290E12-3362-6313-4266-23F98C00B79A"/>
 </associations>
 </Column>
-<Column name="TB_GENERO_ID" id="30008B96-F6C9-86B3-1DB4-CA7E02F49D0F">
+<Column name="GENERO_ID" id="30008B96-F6C9-86B3-1DB4-CA7E02F49D0F">
 <createdBy>walisson</createdBy>
 <createdTime>2023-02-06 17:24:45 UTC</createdTime>
 <ownerDesignName>modelo_logico</ownerDesignName>

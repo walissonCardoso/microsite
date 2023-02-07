@@ -30,17 +30,6 @@
 <ownDataTypeParameters>60 CHAR,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="DESCRICAO" id="3CBF6A39-23A9-373C-449A-7B6B32F1F996">
-<createdBy>walisson</createdBy>
-<createdTime>2023-02-06 17:23:26 UTC</createdTime>
-<ownerDesignName>modelo_logico</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>600 CHAR</dataTypeSize>
-<ownDataTypeParameters>600 CHAR,,</ownDataTypeParameters>
-<autoIncrementCycle>false</autoIncrementCycle>
-</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
 <ind_PK_UK id="E0EC16E4-ADEA-3065-F184-AF0B426989C3" name="TB_GENERO_PK">

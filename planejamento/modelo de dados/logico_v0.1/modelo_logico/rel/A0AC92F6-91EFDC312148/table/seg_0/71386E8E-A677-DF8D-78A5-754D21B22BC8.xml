@@ -52,6 +52,18 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
+<Column name="SEXO" id="4A4C1A50-FE9E-4155-4274-34F23B2FCBF7">
+<createdBy>walisson</createdBy>
+<createdTime>2023-02-07 14:37:17 UTC</createdTime>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>60 CHAR</dataTypeSize>
+<ownDataTypeParameters>60 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
 <Column name="EMAIL" id="BAEF6D6E-AC34-06D4-F36A-1B3FC8BD370C">
 <createdBy>walisson</createdBy>
 <createdTime>2023-02-06 17:11:52 UTC</createdTime>
@@ -96,21 +108,6 @@
 <ownDataTypeParameters>1 CHAR,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="TB_SEXO_ID" id="30346CF0-D5E1-39AA-8742-69BA52CCF4EC">
-<createdBy>walisson</createdBy>
-<createdTime>2023-02-06 17:14:17 UTC</createdTime>
-<ownerDesignName>modelo_logico</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT018</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<previousColumn>false</previousColumn>
-<autoIncrementCycle>false</autoIncrementCycle>
-<associations>
-<colAssociation fkAssociation="F3B813D0-D52E-CEA8-4E05-9772DC60548C" referredColumn="ADAA3A64-2DC1-A5F0-DD53-802EF171988E"/>
-</associations>
-</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
 <ind_PK_UK id="271E885E-F0E0-C511-481D-CCAFCD74F715" name="TB_AUTOR_PK">
@@ -122,16 +119,6 @@
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="BCFB274A-8C62-7A94-7134-31F7B5360333"/>
-</indexColumnUsage>
-</ind_PK_UK>
-<ind_PK_UK id="511F5F96-2828-D761-A3F9-B05BD625D9A8" name="AUTOR_SEXO_FK">
-<createdBy>walisson</createdBy>
-<createdTime>2023-02-06 17:14:17 UTC</createdTime>
-<ownerDesignName>modelo_logico</ownerDesignName>
-<indexState>Foreign Key</indexState>
-<isSurrogateKey>false</isSurrogateKey>
-<indexColumnUsage>
-<colUsage columnID="30346CF0-D5E1-39AA-8742-69BA52CCF4EC"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>
