@@ -1,6 +1,6 @@
 package br.com.micropensamento.microsite.model;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -11,7 +11,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 import br.com.micropensamento.microsite.model.enums.StatusTextoEnum;
@@ -36,7 +35,7 @@ public class Texto {
     private String corpo;
     
     @Column(name = "DT_CRIACAO")
-    private LocalDate dataCriacao;
+    private LocalDateTime dataCriacao = LocalDateTime.now();
     
     @ManyToOne
     @JoinColumn(name = "AUTOR_ID", nullable = false)
@@ -44,5 +43,5 @@ public class Texto {
     
     @Enumerated(EnumType.STRING)
     @Column(name = "STATUS")
-    private StatusTextoEnum statusTexto;
+    private StatusTextoEnum statusTexto = StatusTextoEnum.AGUARDANDO_APROVACAO;
 }
