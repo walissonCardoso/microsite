@@ -1,6 +1,7 @@
 package br.com.micropensamento.microsite.dto;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -37,4 +38,21 @@ public class TextoDto {
         this.statusTexto = texto.getStatusTexto();
         
     }
+    
+    public TextoDto(Texto texto, TextoGeneroRepository textoGeneroRepository) {
+        
+        this(texto);
+        
+        TextoDto textoDto = new TextoDto(texto);
+            
+        List<TextoGenero> generoList = textoGeneroRepository.findAllByTexto(texto);
+        List<Genero> generos = new ArrayList<Genero>();
+        
+        for(TextoGenero genero : generoList){
+            generos.add(genero.getGenero());
+        }
+        
+        textoDto.setGeneros(generos);
+    }
+    
 }

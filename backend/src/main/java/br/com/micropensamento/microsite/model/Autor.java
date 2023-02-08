@@ -48,10 +48,10 @@ public class Autor {
     
     @Type(type = "org.hibernate.type.NumericBooleanType")
     @Column(name = "CONTA_VALIDADA")
-    private Boolean contaValidada;
+    private Boolean contaValidada = false;
     
     @Type(type = "org.hibernate.type.NumericBooleanType")
     @Column(name = "AUTOR_BLOQUEADO")
-    private Boolean autorBloqueado;
+    private Boolean autorBloqueado = false;
     
 }

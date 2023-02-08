@@ -1,8 +1,5 @@
 package br.com.micropensamento.microsite.controller;
 import java.net.URI;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -40,30 +37,23 @@ public class TextoController {
     private TextoGeneroRepository textoGeneroRepository;
     
     @GetMapping
-    public List<TextoDto> lista() {
+    public TextoDto recuperarTexto(String id) {
+
+        Long idNumber = 1L;
         
-        List<Texto> textos = textoRepository.findAll();
-        List<TextoDto> textosDto = new ArrayList<TextoDto>();
+        if(id == null || id == "")
+            return null;
+        else
+            idNumber = Long.parseLong(id);
         
-        for(Texto texto : textos){
-            TextoDto textoDto = new TextoDto(texto);
-            
-            List<TextoGenero> generoList = textoGeneroRepository.findAllByTexto(texto);
-            List<Genero> generos = new ArrayList<Genero>();
-            
-            for(TextoGenero genero : generoList){
-                generos.add(genero.getGenero());
-            }
-            
-            textoDto.setGeneros(generos);
-            textosDto.add(textoDto);
-        }
+        Texto texto = textoRepository.findById(idNumber).get();
+        TextoDto textoDto = new TextoDto(texto, textoGeneroRepository);
         
-        return textosDto;
+        return textoDto;
     }
     
     @PostMapping
-    public ResponseEntity<TextoDto> submeter(@RequestBody TextoForm textoForm, UriComponentsBuilder uriBuilder) {
+    public ResponseEntity<TextoDto> submeterTexto(@RequestBody TextoForm textoForm, UriComponentsBuilder uriBuilder) {
     
         Texto texto = textoForm.converterParaTexto(autorRepository);
         textoRepository.save(texto);
