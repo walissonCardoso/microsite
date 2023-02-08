@@ -5,7 +5,9 @@ import java.net.URI;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -23,8 +25,8 @@ public class AutorController {
     @Autowired
     private AutorRepository autorRepository;
     
-    @GetMapping
-    public AutorDto recuperarAutores(String id) {
+    @GetMapping("/{id}")
+    public AutorDto recuperarAutores(@PathVariable String id) {
         
         Long idNumber = 1L;
         
@@ -33,14 +35,14 @@ public class AutorController {
         else
             idNumber = Long.parseLong(id);
         
-        Autor autor = autorRepository.findById(idNumber).get();
+        Autor autor = autorRepository.getReferenceById(idNumber);
         AutorDto autorDto = new AutorDto(autor);
         
         return autorDto;
     }
     
     @PostMapping
-    public ResponseEntity<AutorDto> submeterTexto(@RequestBody AutorForm autorForm, UriComponentsBuilder uriBuilder) {
+    public ResponseEntity<AutorDto> criarAutor(@RequestBody AutorForm autorForm, UriComponentsBuilder uriBuilder) {
     
         Autor autor = autorForm.converterParaAutor();
         autorRepository.save(autor);

@@ -1,0 +1,7 @@
+curl --location --request POST 'http://localhost:8080/textos' --header 'Content-Type: application/json' --data-raw '{
+     "titulo": "Teste",
+     "corpo": "Este é um novo teste",
+     "autor_id": -2,
+     "generos": [-1,-2]
+}'
+

@@ -1,9 +1,16 @@
 package br.com.micropensamento.microsite.controller;
 import java.net.URI;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,6 +19,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 import br.com.micropensamento.microsite.controller.form.TextoForm;
 import br.com.micropensamento.microsite.dto.TextoDto;
+import br.com.micropensamento.microsite.dto.TextoResumidoDto;
 import br.com.micropensamento.microsite.model.Genero;
 import br.com.micropensamento.microsite.model.Texto;
 import br.com.micropensamento.microsite.model.TextoGenero;
@@ -37,7 +45,16 @@ public class TextoController {
     private TextoGeneroRepository textoGeneroRepository;
     
     @GetMapping
-    public TextoDto recuperarTexto(String id) {
+    public List<TextoResumidoDto> listarTextos() {
+        
+        List<Texto> textos = textoRepository.findAll();
+        List<TextoResumidoDto> textosDto = textos.stream().map(TextoResumidoDto::new).collect(Collectors.toList());
+        
+        return textosDto;
+    }
+    
+    @GetMapping("/{id}")
+    public ResponseEntity<TextoDto> recuperarTexto(@PathVariable String id) {
 
         Long idNumber = 1L;
         
@@ -46,10 +63,11 @@ public class TextoController {
         else
             idNumber = Long.parseLong(id);
         
-        Texto texto = textoRepository.findById(idNumber).get();
-        TextoDto textoDto = new TextoDto(texto, textoGeneroRepository);
+        Optional<Texto> texto = textoRepository.findById(idNumber);
+        if (texto.isPresent())
+            return ResponseEntity.ok(new TextoDto(texto.get()));
         
-        return textoDto;
+        return ResponseEntity.notFound().build();
     }
     
     @PostMapping
@@ -70,7 +88,7 @@ public class TextoController {
     
     private void saveTextoGenero(Long generoId, Texto texto){
     
-        Genero genero = generoRepository.findById(generoId).get();
+        Genero genero = generoRepository.getReferenceById(generoId);
         TextoGenero textoGenero = new TextoGenero();
         
         textoGenero.setTexto(texto);

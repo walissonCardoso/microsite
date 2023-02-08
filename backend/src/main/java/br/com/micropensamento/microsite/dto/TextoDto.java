@@ -3,10 +3,6 @@ package br.com.micropensamento.microsite.dto;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
-import java.util.stream.Collectors;
-
-import org.springframework.beans.factory.annotation.Autowired;
 
 import br.com.micropensamento.microsite.model.Genero;
 import br.com.micropensamento.microsite.model.Texto;
@@ -42,8 +38,6 @@ public class TextoDto {
     public TextoDto(Texto texto, TextoGeneroRepository textoGeneroRepository) {
         
         this(texto);
-        
-        TextoDto textoDto = new TextoDto(texto);
             
         List<TextoGenero> generoList = textoGeneroRepository.findAllByTexto(texto);
         List<Genero> generos = new ArrayList<Genero>();
@@ -52,7 +46,7 @@ public class TextoDto {
             generos.add(genero.getGenero());
         }
         
-        textoDto.setGeneros(generos);
+        this.setGeneros(generos);
     }
     
 }
