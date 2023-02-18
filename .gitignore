@@ -68,3 +68,9 @@ test-files
 **/.apt_generated_tests/
 /.metadata/
 
+# node
+.idea
+node_modules
+dist
+npm-debug.log*
+.DS_Store
