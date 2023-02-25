@@ -1,0 +1,11 @@
+.lista_paginas {
+    width: 100%;
+    text-align: center;
+    margin: auto;
+    padding-bottom: 4vmax;
+}
+
+.lista_paginas a {
+    font-size: 100%;
+    margin: 0 0.5em 0 0.5em;
+}

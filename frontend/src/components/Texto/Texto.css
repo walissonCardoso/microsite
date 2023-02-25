@@ -1,0 +1,14 @@
+.texto {
+    margin: 6em 0;
+}
+
+.texto h2 {
+    color: #2D2D2D;
+    font-size: 160%;
+}
+
+.texto .corpo {
+    color: #484848;
+    font-size: 120%;
+    margin: 2em 0;
+}

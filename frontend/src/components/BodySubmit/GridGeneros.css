@@ -1,0 +1,13 @@
+.grid_generos {
+    width: 100%;
+}
+
+.grid_generos ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.grid_generos li {
+    display: inline-block;
+    width: 16em;
+}

@@ -1,0 +1,37 @@
+.body_submit {
+    width: 80%;
+    max-width: 1440px;
+    margin: auto;
+    color: #484848;
+}
+
+.body_submit h2 {
+    font-family: Hind-Bold;
+    color: #484848;
+    text-align: center;
+    margin: 2em 0 2em 0;
+}
+
+.body_submit div {
+    margin-bottom: 4em;
+}
+
+.body_submit label {
+    display: block;
+    font-size: 120%;
+}
+
+.body_submit textarea {
+    box-shadow: 4px 4px 12px rgba(0.28, 0.28, 0.28, 0.25);
+    width: 100%;
+    border: none;
+    font-size: 120%;
+    color: #484848;
+    padding: 0.6em;
+    margin-top: 0.6em;
+    box-sizing: border-box;
+}
+
+.body_submit .center_item {
+    text-align: center;
+}

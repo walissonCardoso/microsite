@@ -1,0 +1,15 @@
+.footer {
+    background-color: #484848;
+    padding: 0.8em 0;
+}
+
+.footer .footer_textos {
+    max-width: 1440px;
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+    font-size: 1.2em;
+}
+

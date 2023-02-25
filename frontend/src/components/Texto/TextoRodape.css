@@ -1,0 +1,10 @@
+.texto_rodape {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.texto_rodape div {
+    color: #484848;
+    font-size: 100%;
+}
