@@ -1,23 +1,6 @@
 import "./SelecaoMenu.css"
 
-const SelecaoMenu = () => {
-
-    const optionsMenu = [
-        {
-            uri: "/login",
-            texto:"Login"
-        },{
-            uri: "/submit",
-            texto:"Enviar um texto"
-        },{
-            uri: "/filter",
-            texto:"Filtrar textos"
-        },{
-            uri: "/",
-            texto:"Pagina inicial"
-        }
-    ]
-
+const SelecaoMenu = (props) => {
     return (
         <div className="selecao_menu">
             <div className="dropdown">
@@ -25,7 +8,7 @@ const SelecaoMenu = () => {
                     <img src="/images/Menu.png" alt="Menu hambúrguer"/>
                 </button>
                 <div className="dropdown-content">
-                    {optionsMenu.map(option =>
+                    {props.optionsMenu.map(option =>
                         <a href={option.uri} key={option.uri}>{option.texto}</a>
                     )}
                 </div>

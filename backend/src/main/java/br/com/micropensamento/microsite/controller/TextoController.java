@@ -16,10 +16,10 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 import br.com.micropensamento.microsite.controller.form.TextoForm;
 import br.com.micropensamento.microsite.dto.TextoDto;
-import br.com.micropensamento.microsite.dto.TextoResumidoDto;
 import br.com.micropensamento.microsite.model.Genero;
 import br.com.micropensamento.microsite.model.Texto;
 import br.com.micropensamento.microsite.model.TextoGenero;
+import br.com.micropensamento.microsite.model.enums.StatusTextoEnum;
 import br.com.micropensamento.microsite.repository.AutorRepository;
 import br.com.micropensamento.microsite.repository.GeneroRepository;
 import br.com.micropensamento.microsite.repository.TextoGeneroRepository;
@@ -42,10 +42,13 @@ public class TextoController {
     private TextoGeneroRepository textoGeneroRepository;
     
     @GetMapping
-    public List<TextoResumidoDto> listarTextos() {
+    public List<TextoDto> listarTextos() {
         
-        List<Texto> textos = textoRepository.findAll();
-        List<TextoResumidoDto> textosDto = textos.stream().map(TextoResumidoDto::new).collect(Collectors.toList());
+        List<Texto> textos = textoRepository.findAllByStatusTexto(StatusTextoEnum.APROVADO);
+        
+        List<TextoDto> textosDto = textos.stream()
+                                         .map(texto -> new TextoDto(texto, autorRepository, textoGeneroRepository))
+                                         .collect(Collectors.toList());
         
         return textosDto;
     }
@@ -62,7 +65,11 @@ public class TextoController {
         
         Optional<Texto> texto = textoRepository.findById(idNumber);
         if (texto.isPresent())
-            return ResponseEntity.ok(new TextoDto(texto.get()));
+            return ResponseEntity.ok(new TextoDto(texto.get(),
+                                                  autorRepository,
+                                                  textoGeneroRepository
+                                                 )
+                                    );
         
         return ResponseEntity.notFound().build();
     }

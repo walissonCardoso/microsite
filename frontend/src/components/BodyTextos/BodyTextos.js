@@ -21,10 +21,10 @@ const BodyTextos = () => {
                         <Texto
                             key={"texto.autor" + texto.titulo}
                             titulo={texto.titulo}
-                            corpo="Aqui vai ser o corpo do texto"
-                            autor="Autor do texto"
+                            corpo={texto.corpo}
+                            autor={texto.pseudonimoAutor}
                             data={texto.dataCriacao}
-                            generos={"Generos textuais"}
+                            generos={texto.generos}
                         />)
                 }</div>
             }

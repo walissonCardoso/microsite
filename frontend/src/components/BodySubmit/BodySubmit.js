@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import { useNavigate } from "react-router-dom"
 import Button from "../Button"
 import GridGeneros from "./GridGeneros"
 
@@ -6,14 +7,18 @@ import "./BodySubmit.css"
 
 const BodySubmit = () => {
 
+    const [listaGeneros, setListaGeneros] = useState([])
+
     const [titulo, setTitulo] = useState('')
     const [corpo, setCorpo] = useState('')
-    const [generos, setGeneros] = useState(null)
+    const [generos, setGeneros] = useState([])
+    
+    const navigate = useNavigate();
     
     useEffect(() => {
         fetch("/generos")
         .then(response => response.json())
-        .then((usefulData) => setGeneros(usefulData))
+        .then((lista) => setListaGeneros(lista))
     }, [])
 
     const aoSubmeter = (evento) => {
@@ -23,7 +28,7 @@ const BodySubmit = () => {
             "titulo": titulo,
             "corpo": corpo,
             "autor_id": -2,
-            "generos": [-1,-2]
+            "generos": generos
         }
         
         fetch("/textos", {
@@ -33,6 +38,8 @@ const BodySubmit = () => {
                 'Content-type': 'application/json; charset=UTF-8',
             }
         })
+        
+        navigate('/')
     }
     
     return (
@@ -65,7 +72,14 @@ const BodySubmit = () => {
                 </div>
                 <div>
                     <label>Gêneros (selecione entre um e três gêneros)</label>
-                    {generos && <GridGeneros generos={generos}/>}
+                    {
+                        listaGeneros &&
+                        <GridGeneros
+                            listaGeneros={listaGeneros}
+                            setGeneros={setGeneros}
+                            generos={generos}
+                        />
+                    }
                 </div>
                 <div className="center_item">
                     <Button label="Submeter"/>

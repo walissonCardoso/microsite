@@ -10,4 +10,9 @@
 .grid_generos li {
     display: inline-block;
     width: 16em;
+    height: 1em;
+}
+
+.grid_generos div {
+    display: flex;
 }

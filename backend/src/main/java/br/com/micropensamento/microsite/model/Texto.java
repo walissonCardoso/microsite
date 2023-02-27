@@ -28,10 +28,10 @@ public class Texto {
     @Column(name = "ID")
     private Long id;
     
-    @Column(name = "TITULO")
+    @Column(name = "TITULO", length = 60)
     private String titulo;
     
-    @Column(name = "CORPO")
+    @Column(name = "CORPO", length = 600)
     private String corpo;
     
     @Column(name = "DT_CRIACAO")
@@ -43,5 +43,5 @@ public class Texto {
     
     @Enumerated(EnumType.STRING)
     @Column(name = "STATUS")
-    private StatusTextoEnum statusTexto = StatusTextoEnum.AGUARDANDO_APROVACAO;
+    private StatusTextoEnum statusTexto = StatusTextoEnum.APROVADO;
 }

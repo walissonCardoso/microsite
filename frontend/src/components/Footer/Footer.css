@@ -10,6 +10,12 @@
     display: flex;
     justify-content: space-between;
     color: #fff;
-    font-size: 1.2em;
+    font-size: 100%;
+}
+
+@media only screen and (max-width: 480px){
+    .footer .footer_textos {
+        display: block;
+    }
 }
 

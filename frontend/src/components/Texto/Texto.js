@@ -10,7 +10,11 @@ const Texto = (props) => {
             <div className="corpo">
                 { props.corpo }
             </div>
-            <TextoRodape autor={props.autor} data={props.data} generos={props.generos}/>
+            <TextoRodape
+                autor={props.autor}
+                data={props.data}
+                generos={props.generos}
+            />
         </section>
     )
 }

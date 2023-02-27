@@ -4,10 +4,31 @@
 }
 
 .header .header_text {
+    color: #ffffff;
+    font-size: 5vw;
+    text-align: center;
+    margin: auto;
+    padding-top: 5vw;
+    margin-bottom: -2vw;
+}
+
+.header .header_subtitle {
     color: #FFF;
-    font-size: 7vw;
+    font-size: 2vw;
     text-align: center;
     max-width: 1440px;
     margin: auto;
-    padding: 1em 0 1em 0;
+    padding-bottom: 5vw;
+}
+
+@media only screen and (max-width: 720px) {
+    .header .header_text {
+        font-size: 7vw;
+        padding-top: 7vw;
+    }
+    
+    .header .header_subtitle {
+        font-size: 3vw;
+        padding-bottom: 7vw;
+    }
 }

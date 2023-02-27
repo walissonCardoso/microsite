@@ -8,3 +8,9 @@
     color: #484848;
     font-size: 100%;
 }
+
+@media only screen and (max-width: 480px) {
+    .texto_rodape {
+        display: block;
+    }
+}
