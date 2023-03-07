@@ -3,7 +3,7 @@ curl --location --request POST 'http://localhost:8080/autores' --header 'Content
     "pseudonimo": "wall",
     "dataNascimento": "1994-03-06",
     "sexo": "MASCULINO",
-    "email": "walisson@ig.com",
-    "senha": "123456"
+    "email": "walisson@hotmail.com",
+    "senha": "12345678"
 }'
 

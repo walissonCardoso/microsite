@@ -9,11 +9,6 @@ const GridGeneros = (props) => {
     
     const onSelectGenre = (index) => {
         selected[index] = !selected[index]
-        
-        
-        console.log(props.listaGeneros.filter((genero, index) => selected[index]).map(genero => genero.id))
-        
-        
         props.setGeneros(
             props.listaGeneros.filter((genero, index) => selected[index])
                               .map(genero => genero.id)

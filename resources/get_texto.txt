@@ -1,0 +1,3 @@
+url com alguns exemplos do paging
+
+http://localhost:8080/textos?page=0&size=10&ordering=autor&sort=titulo,desc

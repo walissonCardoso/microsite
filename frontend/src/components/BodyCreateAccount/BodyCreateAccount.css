@@ -1,0 +1,41 @@
+.body_create_account {
+    width: 80%;
+    max-width: 48em;
+    margin: auto;
+    color: #484848;
+}
+
+.body_create_account h2 {
+    font-family: Hind-Bold;
+    color: #484848;
+    text-align: center;
+    margin: 2em 0 4em 0;
+}
+
+.body_create_account div {
+    margin-bottom: 4em;
+}
+
+.body_create_account label {
+    font-size: 140%;
+}
+
+.body_create_account input {
+    box-shadow: 4px 4px 12px rgba(0.28, 0.28, 0.28, 0.25);
+    width: 100%;
+    border: none;
+    font-size: 120%;
+    color: #484848;
+    padding: 0.6em;
+    margin-top: 0.6em;
+    box-sizing: border-box;
+}
+
+.body_create_account .center_item {
+    text-align: center;
+}
+
+.body_create_account .aceita_termos {
+    width: auto;
+    box-shadow: none;
+}

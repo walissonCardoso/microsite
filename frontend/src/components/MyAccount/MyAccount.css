@@ -1,0 +1,17 @@
+.my_account {
+    width: 80%;
+    max-width: 1440px;
+    margin: auto;
+    color: #484848;
+    text-align: center;
+}
+
+.my_account h2 {
+    font-family: Hind-Bold;
+    margin: 2em 0 2em 0;
+}
+
+.my_account img {
+    width: 128px;
+    margin: 4em 0 8em 0;
+}

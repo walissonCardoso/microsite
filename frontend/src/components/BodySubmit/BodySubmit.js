@@ -2,42 +2,49 @@ import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import Button from "../Button"
 import GridGeneros from "./GridGeneros"
-
 import "./BodySubmit.css"
+import http from "../../http"
 
-const BodySubmit = () => {
-
-    const [listaGeneros, setListaGeneros] = useState([])
-
+const BodySubmit = (props) => {
+    
     const [titulo, setTitulo] = useState('')
     const [corpo, setCorpo] = useState('')
     const [generos, setGeneros] = useState([])
+    const [listaGeneros, setListaGeneros] = useState(null)
     
     const navigate = useNavigate();
     
     useEffect(() => {
-        fetch("/generos")
-        .then(response => response.json())
-        .then((lista) => setListaGeneros(lista))
+        if(!props.loggedUser) {
+            alert("Você precisa estar logado para enviar um texto")
+            navigate("/login")
+        }
+    }, [props.loggedUser, navigate]);
+    
+    useEffect(() => {        
+        http.get("/generos")
+        .then(response => setListaGeneros(response.data))
     }, [])
 
     const aoSubmeter = (evento) => {
         evento.preventDefault()
         
-        const texto = {
-            "titulo": titulo,
-            "corpo": corpo,
-            "autor_id": -2,
-            "generos": generos
-        }
-        
-        fetch("/textos", {
-            method: 'POST',
-            body: JSON.stringify(texto),
-            headers: {
-                'Content-type': 'application/json; charset=UTF-8',
+        if(props.loggedUser){
+            const texto = {
+                "titulo": titulo,
+                "corpo": corpo,
+                "autor_id": -2,
+                "generos": generos
             }
-        })
+        
+            http.post("/textos", texto)
+            .then(() => {
+                props.setTextCounter(props.textCounter + 1)
+                alert("Texto enviado com sucesso! Obrigado pelo envio.")
+            })
+        }else{
+            alert("Sua sessão expirou! Por favor, faça o login novamente.")
+        }
         
         navigate('/')
     }
@@ -55,6 +62,7 @@ const BodySubmit = () => {
                         placeholder="ex: Uma Noite Fria"
                         required={true}
                         value={titulo}
+                        maxLength={60}
                         onChange={evento => setTitulo(evento.target.value)}
                     ></textarea>
                 </div>
@@ -67,6 +75,7 @@ const BodySubmit = () => {
                         placeholder="ex: Era uma noite realmente muito fria quando dei por mim..."
                         required={true}
                         value={corpo}
+                        maxLength={600}
                         onChange={evento => setCorpo(evento.target.value)}
                     ></textarea>
                 </div>
@@ -82,7 +91,7 @@ const BodySubmit = () => {
                     }
                 </div>
                 <div className="center_item">
-                    <Button label="Submeter"/>
+                    <Button label="Submeter" disabled={generos.length < 1 || generos.length > 3}/>
                 </div>
             </form>
         </section>

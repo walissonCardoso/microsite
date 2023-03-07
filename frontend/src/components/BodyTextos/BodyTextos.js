@@ -2,16 +2,22 @@ import Texto from "../Texto"
 import ListaPaginas from "../ListaPaginas"
 import "./BodyTextos.css"
 import { useEffect, useState } from "react"
+import http from "../../http"
 
-const BodyTextos = () => {
+const BodyTextos = (props) => {
 
     const [textos, setTextos] = useState(null)
+    const [pageNumber, setPageNumber] = useState(0)
+    const [totalPages, setTotalPages] = useState(null)
     
     useEffect(() => {
-        fetch("/textos")
-        .then(response => response.json())
-        .then(response => setTextos(response))
-    }, [])
+        http.get("/textos?size=5&page=" + pageNumber)
+        .then(response => {
+            setTotalPages(response.data.totalPages);
+            setPageNumber(response.data.number);
+            setTextos(response.data.content);
+        })
+    }, [pageNumber, props.textCounter])
 
     return (
         <section className="body_textos">
@@ -19,7 +25,7 @@ const BodyTextos = () => {
                 <div>{
                     textos.map(texto =>
                         <Texto
-                            key={"texto.autor" + texto.titulo}
+                            key={texto.id}
                             titulo={texto.titulo}
                             corpo={texto.corpo}
                             autor={texto.pseudonimoAutor}
@@ -28,7 +34,13 @@ const BodyTextos = () => {
                         />)
                 }</div>
             }
-            <ListaPaginas/>
+            {totalPages &&
+                <ListaPaginas
+                    pageNumber={pageNumber}
+                    totalPages={totalPages}
+                    setPageNumber={setPageNumber}
+                />
+            }
         </section>
     )
 }

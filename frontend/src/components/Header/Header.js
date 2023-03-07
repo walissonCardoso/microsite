@@ -1,24 +1,28 @@
 import './Header.css'
 import SelecaoMenu from '../SelecaoMenu'
 
-const Header = () => {
+const Header = (props) => {
     
     const optionsMenu = [
-        {
-            uri: "/login",
+        {   uri: "/login",
             texto:"Login"
-        },{
-            uri: "/submit",
+        },{ uri: "/submit",
             texto:"Enviar um texto"
-        },{
-            uri: "/filter",
+        },{ uri: "/filter",
             texto:"Filtrar textos"
-        },{
-            uri: "/",
-            texto:"Pagina inicial"
-        }
-    ]
-
+        },{ uri: "/",
+            texto:"Pagina inicial"}]
+    
+    const optionsMenuLogged = [
+        {   uri: "/my_account",
+            texto:"Minha conta"
+        },{ uri: "/submit",
+            texto:"Enviar um texto"
+        },{ uri: "/filter",
+            texto:"Filtrar textos"
+        },{ uri: "/",
+            texto:"Pagina inicial"}]
+    
     return (
         <section>
             <div className="header">
@@ -30,7 +34,7 @@ const Header = () => {
                 </div>
             </div>
             <SelecaoMenu
-                optionsMenu={optionsMenu}
+                optionsMenu={props.loggedUser ? optionsMenuLogged : optionsMenu}
             />
         </section>
     )

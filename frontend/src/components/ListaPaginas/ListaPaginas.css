@@ -8,4 +8,10 @@
 .lista_paginas a {
     font-size: 100%;
     margin: 0 0.5em 0 0.5em;
+    color: #484848;
+    text-decoration: none;
+}
+
+.lista_paginas .underline {
+    text-decoration: underline;
 }

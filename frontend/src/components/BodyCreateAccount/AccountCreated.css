@@ -1,0 +1,27 @@
+.section {
+    width: 80%;
+    margin: auto;
+    color: #484848;
+    text-align: center;
+}
+
+.section h2 {
+    font-family: Hind-Bold;
+    margin: 2em 0 2em 0;
+}
+
+.section img {
+    width: 128px;
+    margin-bottom: 4em;
+}
+
+.section p {
+    max-width: 480px;
+    margin: auto;
+    font-size: 120%;
+    color: #484848;
+}
+
+.section .home_button {
+    margin: 4em 0 4em 0;
+}
