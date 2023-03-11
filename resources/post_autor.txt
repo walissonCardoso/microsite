@@ -1,9 +1,0 @@
-curl --location --request POST 'http://localhost:8080/autores' --header 'Content-Type: application/json' --data-raw '{
-    "nome": "Walisson",
-    "pseudonimo": "wall",
-    "dataNascimento": "1994-03-06",
-    "sexo": "MASCULINO",
-    "email": "walisson@hotmail.com",
-    "senha": "12345678"
-}'
-

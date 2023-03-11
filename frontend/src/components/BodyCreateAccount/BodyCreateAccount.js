@@ -4,15 +4,14 @@ import { useState } from "react";
 import Button from "../Button";
 import AccountCreated from "./AccountCreated.js"
 import ErrorPost from "./ErrorPost.js"
-import http from "../../http";
+import axios from "axios";
 
-const BodyCreateAccount = () => {
+const BodyCreateAccount = (props) => {
 
     const [state, setState] = useState('creating')
     
     const [pseudonimo, setPseudonimo] = useState('')
     const [nomeCompleto, setNomeCompleto] = useState('')
-    const [sexo, setSexo] = useState('')
     const [email, setEmail] = useState('')
     const [senha, setSenha] = useState('')
     const [senhaRepetida, setSenhaRepetida] = useState('')
@@ -24,22 +23,33 @@ const BodyCreateAccount = () => {
         const autor = {
             "nome": nomeCompleto,
             "pseudonimo": pseudonimo,
-            "dataNascimento": "1994-03-06",
-            "sexo": "MASCULINO",
             "email": email,
             "senha": senha
         }
                 
-        http.post('/autores', autor)
-            .then(() => setState("done"))
+        axios.post('/api/autor', autor)
+            .then(() => {
+                setState("done")
+                
+                const credentials = {
+                    "email": email,
+                    "senha": senha
+                }
+                
+                axios.post("/api/login", credentials)
+                    .then(response => {
+                        sessionStorage.setItem('token', response.data.token)
+                        props.setLoggedUser(true)
+                    })
+            
+            })
             .catch(() => setState("error"))
     }
     
     const validadePseudonimo = (event) => {
-        http.get("/autores/verifypseudonimo/" + event.target.value)
+        axios.get("/api/autor/verifypseudonimo/" + event.target.value)
         .then(response => {
-            var pseudonimoExists = response.data
-            if(pseudonimoExists)
+            if(response.data === "existe")
                 event.target.setCustomValidity("Ops, este pseudônimo já está sendo usado")
             else
                 event.target.setCustomValidity("")
@@ -54,10 +64,9 @@ const BodyCreateAccount = () => {
             event.target.setCustomValidity("")
         }
         
-        http.get("/autores/verifyemail/" + event.target.value)
+        axios.get("/api/autor/verifyemail/" + event.target.value)
         .then(response => {
-            var emailExists = response.data
-            if(emailExists)
+            if(response.data === "existe")
                 event.target.setCustomValidity("Uma conta já está usando este endereço de e-mail")
             else
                 event.target.setCustomValidity("")

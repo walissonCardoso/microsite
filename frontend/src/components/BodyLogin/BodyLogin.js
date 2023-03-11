@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import http from "../../http";
+import axios from "axios";
 import Button from "../Button";
 import "./BodyLogin.css"
 
@@ -20,7 +20,7 @@ const BodyLogin = (props) => {
             "senha": senha
         }
         
-        http.post("/login", credentials)
+        axios.post("/api/login", credentials)
             .then(response => {
                 setWrongPassword(false)
                 sessionStorage.setItem('token', response.data.token)

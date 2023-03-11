@@ -14,7 +14,7 @@ const AccountCreated = (props) =>{
     return (
         <section className="section">
             <h2>Ops, algo deu errado</h2>
-            <img src="./images/thumb-down.png"/>
+            <img src="./images/thumb-down.png" alt="Resultado negativo"/>
             <p>
                 Parece que nosso servidor não conseguiu processar a sua requisição. Como este pode ser apenas um erro temporário, por favor tente novamente daqui a alguns minutos.
             </p>

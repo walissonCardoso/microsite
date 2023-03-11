@@ -2,7 +2,7 @@ package br.com.microssite.Texto;
 
 import java.util.List;
 
-import br.com.microssite.Autor.AutorRepository;
+import br.com.microssite.Autor.Autor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -12,18 +12,15 @@ public class TextoForm {
 
     private String titulo;
     private String corpo;
-    private Long autor_id;
     private List<Long> generos;
     
-    public Texto converterParaTexto(AutorRepository autorRepository) {
+    public Texto converterParaTexto(Autor autor) {
     
         Texto texto = new Texto();
         
         texto.setTitulo(this.titulo);
         texto.setCorpo(this.corpo);
-        texto.setAutor(
-            autorRepository.findById(this.autor_id).get()
-        );
+        texto.setAutor(autor);
         
         return texto;
     }

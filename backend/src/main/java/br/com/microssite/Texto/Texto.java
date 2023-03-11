@@ -44,4 +44,5 @@ public class Texto {
     @Enumerated(EnumType.STRING)
     @Column(name = "STATUS")
     private StatusTextoEnum statusTexto = StatusTextoEnum.APROVADO;
+    
 }

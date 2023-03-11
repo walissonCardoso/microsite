@@ -1,9 +1,0 @@
-curl --location 'http://localhost:8080/textos' \
---header 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwiaXNzIjoiQVBJIGRvIG1pY3Jvc3NpdGUiLCJleHAiOjE2NzgyMDg1Mjd9.WAS6Tcsld37QMfPzyPFKOX7AdZq1V1NOjqb6fmId_YU' \
---header 'Content-Type: application/json' \
---data '{
-    "titulo": "Titulo to negócio",
-    "corpo": "Corpo do texto",
-    "autor_id": -2,
-    "generos": [1,2]
-}'

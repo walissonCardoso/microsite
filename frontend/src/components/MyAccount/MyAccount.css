@@ -3,15 +3,53 @@
     max-width: 1440px;
     margin: auto;
     color: #484848;
-    text-align: center;
+
 }
 
-.my_account h2 {
+.user_info {
+    margin-top: 4em;
+}
+
+.user_info div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.user_info h2 {
     font-family: Hind-Bold;
-    margin: 2em 0 2em 0;
+    margin: 0;
 }
 
-.my_account img {
-    width: 128px;
-    margin: 4em 0 8em 0;
+.user_info p {
+    font-size: 120%;
+}
+
+.lista_textos h2 {
+    font-family: Hind-Bold;
+    margin-top: 4em;
+    margin-bottom: 2em;
+}
+
+.lista_textos .item_texto {
+    padding: 1em;
+    width: 95%;
+    margin: auto;
+    margin-bottom: 2em;
+    font-family: Hind-Regular;
+    box-shadow: 4px 4px 12px rgba(0.28, 0.28, 0.28, 0.25);
+}
+
+.lista_textos .item_texto h2 {
+    font-family: Hind-Regular;
+    font-size: 120%;
+    margin: 0;
+}
+
+.lista_textos .item_texto div {
+    font-size: 100%;
+    margin: 0;
+}
+
+.lista_textos .item_texto button {
+    margin-top: 1em;
 }

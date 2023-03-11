@@ -1,5 +1,5 @@
 package br.com.microssite.Security;
 
-public record TokenJwtDto(String token) {
+public record TokenJwtDto(Long id, String token) {
 
 }

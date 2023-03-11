@@ -1,0 +1,6 @@
+curl -o temp.out -i 'http://localhost:8080/api/login' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "email": "walissoncardosogomes@hotmail.com",
+    "senha": "94/03/06"
+}'

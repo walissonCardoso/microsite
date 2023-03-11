@@ -21,6 +21,7 @@ public class TextoDto {
     private String dataCriacao;
     private Long autorId;
     private String pseudonimoAutor;
+    private String statusTexto;
     private List<String> generos;
     
     public TextoDto(Texto texto) {
@@ -29,6 +30,7 @@ public class TextoDto {
         this.titulo = texto.getTitulo();
         this.corpo = texto.getCorpo();
         this.autorId = texto.getAutor().getId();
+        this.statusTexto = texto.getStatusTexto().toString();
         
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
         this.dataCriacao = texto.getDataCriacao().format(formatter);

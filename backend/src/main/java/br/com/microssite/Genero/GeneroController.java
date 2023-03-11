@@ -13,7 +13,7 @@ public class GeneroController {
     @Autowired
     private GeneroRepository generoRepository;
     
-    @RequestMapping("/generos")
+    @RequestMapping("/api/generos")
     public List<GeneroDto> lista() {
         
         List<Genero> generos = generoRepository.findAll();

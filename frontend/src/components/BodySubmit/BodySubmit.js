@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom"
 import Button from "../Button"
 import GridGeneros from "./GridGeneros"
 import "./BodySubmit.css"
-import http from "../../http"
+import axios from "axios"
 
 const BodySubmit = (props) => {
     
@@ -22,7 +22,7 @@ const BodySubmit = (props) => {
     }, [props.loggedUser, navigate]);
     
     useEffect(() => {        
-        http.get("/generos")
+        axios.get("/api/generos")
         .then(response => setListaGeneros(response.data))
     }, [])
 
@@ -33,11 +33,15 @@ const BodySubmit = (props) => {
             const texto = {
                 "titulo": titulo,
                 "corpo": corpo,
-                "autor_id": -2,
                 "generos": generos
             }
-        
-            http.post("/textos", texto)
+            
+            const token = sessionStorage.getItem('token');
+            const config = {
+                headers: { Authorization: `Bearer ${token}` }
+            };
+            
+            axios.post("/api/textos", texto, config)
             .then(() => {
                 props.setTextCounter(props.textCounter + 1)
                 alert("Texto enviado com sucesso! Obrigado pelo envio.")

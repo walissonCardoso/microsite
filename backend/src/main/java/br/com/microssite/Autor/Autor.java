@@ -52,10 +52,15 @@ public class Autor implements UserDetails {
     private String hashSenha;
     
     @Column(name = "CONTA_VALIDADA")
-    private Boolean contaValidada = false;
+    private Boolean contaValidada = true;
     
     @Column(name = "AUTOR_BLOQUEADO")
     private Boolean autorBloqueado = false;
+
+    public void updateData(AutorUpdateInfo autorInfo) {
+        if(autorInfo.nome() != null)
+            this.nome = autorInfo.nome();
+    }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
@@ -79,7 +84,7 @@ public class Autor implements UserDetails {
 
     @Override
     public boolean isAccountNonLocked() {
-        return true;
+        return this.contaValidada;
     }
 
     @Override
@@ -89,6 +94,6 @@ public class Autor implements UserDetails {
 
     @Override
     public boolean isEnabled() {
-        return true;
+        return !this.autorBloqueado;
     }
 }

@@ -9,5 +9,7 @@ import br.com.microssite.Texto.Texto;
 public interface TextoGeneroRepository extends JpaRepository<TextoGenero, Long>{
 
     List<TextoGenero> findAllByTexto(Texto texto);
+
+    void deleteAllByTexto(Texto texto);
     
 }

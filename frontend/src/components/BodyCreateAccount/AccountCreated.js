@@ -13,10 +13,10 @@ const AccountCreated = (props) =>{
     
     return (
         <section className="section">
-            <h2>Bem-vindo à bordo {props.nome}!</h2>
-            <img src="./images/like.png"/>
+            <h2>Bem-vindo à bordo, {props.nome}!</h2>
+            <img src="./images/like.png" alt="Resultado positivo"/>
             <p>
-                Sua conta foi criada com sucesso. Você precisa apenas validá-la em até 24 horas utilizando o link que foi enviado para o e-mail cadastrado.
+                Sua conta foi criada com sucesso!<br></br>Uma vez que este projeto foi criado apenas como ferramenta de aprendizado, sua conta foi automaticamente ativada. É possível que futuramente isto seja revisto e todas as contas serão excluídas sem aviso prévio.
             </p>
             <form onSubmit={go_home}>
                 <div className="home_button">

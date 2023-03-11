@@ -1,0 +1,8 @@
+curl --location 'http://localhost:8080/api/textos' \
+--header 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ3YWxpc3NvbmNhcmRvc29nb21lc0Bob3RtYWlsLmNvbSIsImlzcyI6IkFQSSBkbyBtaWNyb3NzaXRlIiwiZXhwIjoxNjc4NDk4NzcxfQ.oXKxr2xjQVQPi3UKlCZ2tY_fMKTZqy5xmHVpdUwUO14' \
+--header 'Content-Type: application/json' \
+--data '{
+    "titulo": "Titulo to texto",
+    "corpo": "Corpo do texto",
+    "generos": [1,2]
+}'
