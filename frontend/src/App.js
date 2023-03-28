@@ -29,7 +29,10 @@ function App() {
             // Se é inválido, 
             if(loggedUser && token != null){
                 const config = {
-                    headers: { Authorization: `Bearer ${token}` }
+                    headers: {
+                        'Authorization': `Bearer ${sessionStorage.getItem('token')}`,
+                        'Content-Type': 'application/json'
+                    }
                 };
                 
                 axios.get("/api/token_reflesh", config)

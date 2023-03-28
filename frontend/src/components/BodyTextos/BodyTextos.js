@@ -18,6 +18,7 @@ const BodyTextos = (props) => {
             setTotalPages(response.data.totalPages);
             setPageNumber(response.data.number);
             setTextos(response.data.content);
+            window.scrollTo(0,0);
         })
     }, [pageNumber, props.textCounter])
 

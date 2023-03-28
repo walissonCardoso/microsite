@@ -165,7 +165,7 @@ const BodyCreateAccount = (props) => {
                             onChange={() => setAceitaTermos(!aceitaTermos)}
                         />
                         <label htmlFor="aceitaTermos">
-                            Concordo com os <a href="#">termos de uso e privacidade</a>
+                            Concordo com os <a href="/">termos de uso e privacidade</a>
                         </label>
                     </div>
                     <div className="center_item">

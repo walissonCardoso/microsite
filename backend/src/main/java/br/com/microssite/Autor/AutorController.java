@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
@@ -65,10 +66,10 @@ public class AutorController {
         return ResponseEntity.ok(new AutorDto(autor));
     }
     
-    @DeleteMapping("/{id}")
+    @DeleteMapping
     @Transactional
     @CacheEvict(value = "listaDeTextos", allEntries = true)
-    public ResponseEntity<Object> delete(@PathVariable Long id, @AuthenticationPrincipal Autor loggeAutor) {
+    public ResponseEntity<Object> delete(@RequestParam Long id, @AuthenticationPrincipal Autor loggeAutor) {
         Autor autor = autorRepository.getReferenceById(id);
         if(autor.getId() != loggeAutor.getId())
             return ResponseEntity.badRequest().build();

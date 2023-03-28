@@ -36,9 +36,11 @@ const BodySubmit = (props) => {
                 "generos": generos
             }
             
-            const token = sessionStorage.getItem('token');
             const config = {
-                headers: { Authorization: `Bearer ${token}` }
+                headers: {
+                    'Authorization': `Bearer ${sessionStorage.getItem('token')}`,
+                    'Content-Type': 'application/json'
+                }
             };
             
             axios.post("/api/textos", texto, config)

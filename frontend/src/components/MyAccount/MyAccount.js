@@ -23,11 +23,14 @@ const MyAccount = (props) => {
     
     const deleteText = (id) => {
         const config = {
-            headers: { Authorization: `Bearer ${sessionStorage.getItem('token')}` }
+            headers: {
+                'Authorization': `Bearer ${sessionStorage.getItem('token')}`,
+                'Content-Type': 'application/json'
+            }
         };
         
         if (window.confirm("Esta ação não pode ser revertida. Tem certeza que deseja excluir o texto?") === true) {
-            axios.delete("/api/textos/" + id, config)
+            axios.delete("/api/textos?id=" + id, config)
             .then(response => {
                 if(response.status === 200){
                     setRefleshText(true)
@@ -47,7 +50,10 @@ const MyAccount = (props) => {
     
     useEffect(() => {
         const config = {
-            headers: { Authorization: `Bearer ${sessionStorage.getItem('token')}` }
+            headers: {
+                'Authorization': `Bearer ${sessionStorage.getItem('token')}`,
+                'Content-Type': 'application/json'
+            }
         };
         
         axios.get("/api/autor/info", config)
@@ -57,7 +63,10 @@ const MyAccount = (props) => {
 
     useEffect(() => {
         const config = {
-            headers: { Authorization: `Bearer ${sessionStorage.getItem('token')}` }
+            headers: {
+                'Authorization': `Bearer ${sessionStorage.getItem('token')}`,
+                'Content-Type': 'application/json'
+            }
         };
         
         axios.get("/api/textos/list/by_autor?page=" + pageNumber, config)

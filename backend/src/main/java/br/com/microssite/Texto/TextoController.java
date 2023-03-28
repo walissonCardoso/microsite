@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
@@ -31,8 +32,8 @@ import br.com.microssite.TextoGenero.TextoGeneroRepository;
 import jakarta.transaction.Transactional;
 
 @RestController
+@CrossOrigin(origins = "*")
 @RequestMapping("/api/textos")
-@CrossOrigin(origins = "http://frontend-service:3000")
 public class TextoController {
     
     @Autowired
@@ -97,11 +98,11 @@ public class TextoController {
         
         return ResponseEntity.created(uri).body(new TextoDto(texto, autorRepository, textoGeneroRepository));        
     }
-
-    @DeleteMapping("/{id}")
+    
+    @DeleteMapping
     @Transactional
     @CacheEvict(value = "listaDeTextos", allEntries = true)
-    public void delete(@PathVariable Long id, @AuthenticationPrincipal Autor loggeAutor) {
+    public void delete(@RequestParam Long id, @AuthenticationPrincipal Autor loggeAutor) {
         Texto texto = textoRepository.getReferenceById(id);
         if(texto.getAutor().getId() != loggeAutor.getId())
             return;
